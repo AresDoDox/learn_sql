@@ -1,7 +1,8 @@
 -- Luyện tập SQL - Database
 -- Lấy top 5 user có nhiều bài viết nhất:
 SELECT users.user_id,
-    users.username COUNT(posts.post_id) AS quantity_post
+    users.username,
+    COUNT(posts.post_id) AS quantity_post
 FROM users
     JOIN posts ON users.user_id = post.user_id
 GROUP BY users.user_id,
